@@ -1,0 +1,71 @@
+# Test Ollama API Endpoints
+
+@baseUrl = https://localhost:7174
+
+### List all available models
+GET {{baseUrl}}/api/ollama/models
+Accept: application/json
+
+### Generate text
+POST {{baseUrl}}/api/ollama/generate
+Content-Type: application/json
+
+{
+    "model": "phi3",
+    "prompt": "Explain what is quantum computing in simple terms?",
+    "stream": false
+}
+
+### Chat conversation
+POST {{baseUrl}}/api/ollama/chat
+Content-Type: application/json
+
+{
+    "model": "gemma3",
+    "messages": [
+        {
+            "role": "user",
+            "content": "What is quantum computing?"
+        }
+    ]
+}
+
+### Chat conversation with multiple messages
+POST {{baseUrl}}/api/ollama/chat
+Content-Type: application/json
+
+{
+    "model": "gemma3",
+    "messages": [
+        {
+            "role": "user",
+            "content": "What is quantum computing?"
+        },
+        {
+            "role": "assistant",
+            "content": "Quantum computing uses the principles of quantum mechanics to process information. It uses quantum bits or qubits instead of traditional binary bits."
+        },
+        {
+            "role": "user",
+            "content": "Can you explain what a qubit is?"
+        }
+    ]
+}
+
+### Test error handling - Invalid model
+POST {{baseUrl}}/api/ollama/generate
+Content-Type: application/json
+
+{
+    "model": "non-existent-model",
+    "prompt": "This should return a 404 error"
+}
+
+### Test error handling - Empty prompt
+POST {{baseUrl}}/api/ollama/generate
+Content-Type: application/json
+
+{
+    "model": "gemma3",
+    "prompt": ""
+}

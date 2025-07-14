@@ -220,3 +220,7 @@ https://localhost:7000/swagger
 - [Official Documentation](https://github.com/ollama/ollama/tree/main/docs)
 - [GitHub Repository](https://github.com/ollama/ollama)
 - [Discord Community](https://discord.gg/ollama)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

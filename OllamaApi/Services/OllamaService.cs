@@ -1,6 +1,5 @@
-using System.Text.Json;
 using OllamaApi.Models;
-using Microsoft.Extensions.Logging;
+using System.Text.Json;
 
 namespace OllamaApi.Services;
 

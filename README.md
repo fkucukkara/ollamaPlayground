@@ -219,7 +219,6 @@ https://localhost:7000/swagger
 ## Additional Resources
 - [Official Documentation](https://github.com/ollama/ollama/tree/main/docs)
 - [GitHub Repository](https://github.com/ollama/ollama)
-- [Discord Community](https://discord.gg/ollama)
 
 ## 📄 License
 
